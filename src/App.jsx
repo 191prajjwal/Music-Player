@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
+import MainContent from "./components/MainContent";
 
 const App = () => {
   const [currentSong, setCurrentSong] = useState(null);
@@ -12,7 +13,14 @@ const App = () => {
 
      
       <div className="flex-1 flex flex-col text-white">
+       
         <Header />
+
+      
+        <div className="flex-1 p-6 lg:p-8 overflow-y-auto">
+        <MainContent onSongSelect={setCurrentSong} currentSong={currentSong} />
+
+        </div>
       </div>
     </div>
   );
